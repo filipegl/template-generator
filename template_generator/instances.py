@@ -36,7 +36,7 @@ class Token:
 class Instance:
     def __init__(self, text):
         self.__original_text = text     
-        self.__tokenized = nltk.tokenize.word_tokenize(text)
+        self._tokenized = nltk.tokenize.word_tokenize(text)
         self._tokens = self.__generate_tokens()
         
         self.prediction = None
@@ -51,7 +51,7 @@ class Instance:
 
     @property
     def tokenized(self):
-        return self.__tokenized
+        return self._tokenized
 
     @property
     def tokens(self):

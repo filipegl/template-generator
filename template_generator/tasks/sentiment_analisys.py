@@ -135,11 +135,11 @@ class PosNegTemplateGeneratorApp3(GenericTemplateGeneratorApp3):
             model = self.model
             # get a list of tokens from sentence
             tokens = sent.sorted_tokens
+            tokens = [token for token in tokens if token.tag in self.relevant_tags]
 
             for token in tokens[:n_words]:
-                if token.tag in self.relevant_tags:
-                    if not token.is_predicted:
-                        token.prediction = make_prediction(token.word, model)
+                if not token.is_predicted:
+                    token.prediction = make_prediction(token.word, model)
                 
                 # Mount lex name based on prediction label and tag from token
                 lex_name = f'pos_{token.tag.lower()}' if token.prediction.label == 1 else f'neg_{token.tag.lower()}'
@@ -152,8 +152,8 @@ class PosNegTemplateGeneratorApp3(GenericTemplateGeneratorApp3):
         return sentences
 
 
-    def generate_templates(self, texts_input, n_masks=2):
-        return super().generate_templates(texts_input, self.relevant_tags, n_masks=n_masks)
+    def generate_templates(self, texts_input, n_masks=2, range_words=2, min_classification_score=0.9):
+        return super().generate_templates(texts_input, self.relevant_tags, n_masks, range_words, min_classification_score)
 
 
 class PosNegTemplateGeneratorApp4(GenericTemplateGeneratorApp4):
@@ -233,11 +233,11 @@ class PosNegTemplateGeneratorApp5(GenericTemplateGeneratorApp5):
             model = self.model
             # get a list of tokens from sentence
             tokens = sent.sorted_tokens
+            tokens = [token for token in tokens if token.tag in self.relevant_tags]
 
             for token in tokens[:n_words]:
-                if token.tag in self.relevant_tags:
-                    if not token.is_predicted:
-                        token.prediction = make_prediction(token.word, model)
+                if not token.is_predicted:
+                    token.prediction = make_prediction(token.word, model)
                 
                 # Mount lex name based on prediction label and tag from token
                 lex_name = f'pos_{token.tag.lower()}' if token.prediction.label == 1 else f'neg_{token.tag.lower()}'
@@ -250,6 +250,6 @@ class PosNegTemplateGeneratorApp5(GenericTemplateGeneratorApp5):
         return sentences
 
 
-    def generate_templates(self, texts_input, n_masks=2):
-        return super().generate_templates(texts_input, self.relevant_tags, n_masks=n_masks)
+    def generate_templates(self, texts_input, n_masks=2, range_words=2, min_classification_score=0.9):
+        return super().generate_templates(texts_input, self.relevant_tags, n_masks, range_words, min_classification_score)
 
