@@ -13,11 +13,11 @@ class TemplateGenerator(ABC):
         self.__oracle_model = OracleModel(oracle_models)
 
     @abstractmethod
-    def replace_with_masks(self, sentences, n_words=2, range_words=2):
+    def replace_with_masks(self, sentences, n_words=2):
         pass
 
     @abstractmethod
-    def generate_templates(self, texts_input, n_masks = 2, range_words=2, min_classification_score=0.9, relevant_tags=[]):
+    def generate_templates(self, texts_input, relevant_tags=[], n_masks = 2, range_words=2, min_classification_score=0.9):
         pass
 
     @property
@@ -52,7 +52,7 @@ class TemplateGenerator(ABC):
 # Approach 1
 class GenericTemplateGeneratorApp1(TemplateGenerator):
 
-    def generate_templates(self, texts_input, relevant_tags, n_masks = 2):
+    def generate_templates(self, texts_input, relevant_tags, n_masks=2, range_words=2):
         if isinstance(texts_input, str):
             texts_input = [texts_input]
         
@@ -73,7 +73,7 @@ class GenericTemplateGeneratorApp1(TemplateGenerator):
         print(f':: {len(sentences)} sentences remaining.')
 
         # 4. Filtering sentences having only nouns, adjectives or verbs with higher ranked words
-        sentences = RelevantWordsFilter.apply(sentences, relevant_tags)
+        sentences = RelevantWordsFilter.apply(sentences, relevant_tags, range_words)
         print(f':: {len(sentences)} sentences remaining.')
 
         # 5. Replacing the n most relevant words with masks
@@ -86,7 +86,7 @@ class GenericTemplateGeneratorApp1(TemplateGenerator):
 # Approach 2
 class GenericTemplateGeneratorApp2(TemplateGenerator):
 
-    def generate_templates(self, texts_input, relevant_tags, n_masks = 2):
+    def generate_templates(self, texts_input, relevant_tags, n_masks=2, range_words=2):
         if isinstance(texts_input, str):
             texts_input = [texts_input]
 
@@ -111,7 +111,7 @@ class GenericTemplateGeneratorApp2(TemplateGenerator):
         print(f':: Word ranking done.')
 
         # 5. Filtering sentences having only nouns, adjectives or verbs with higher ranked words
-        sentences = RelevantWordsFilter.apply(sentences, relevant_tags, n_masks)
+        sentences = RelevantWordsFilter.apply(sentences, relevant_tags, n_masks, range_words)
         print(f':: {len(sentences)} sentences remaining.')
 
         # 6. Replacing the n most relevant words with masks
@@ -169,7 +169,7 @@ class GenericTemplateGeneratorApp3(TemplateGenerator):
 # Approach 4
 class GenericTemplateGeneratorApp4(TemplateGenerator):
 
-    def generate_templates(self, texts_input, relevant_tags, n_masks=2, min_classification_score=0.9):
+    def generate_templates(self, texts_input, relevant_tags, n_masks=2, range_words=2, min_classification_score=0.9):
         instances = [Instance(text) for text in texts_input]
 
         # 1. Predict entire instance
@@ -204,14 +204,15 @@ class GenericTemplateGeneratorApp4(TemplateGenerator):
         print(f':: Word ranking done.')
 
         # 8. Filtering sentences having only relevant words as higher ranked words
-        sentences = RelevantWordsFilter.apply(sentences, relevant_tags, n_masks)
+        sentences = RelevantWordsFilter.apply(sentences, relevant_tags, n_masks, range_words)
         print(f':: {len(sentences)} sentences remaining.')
 
-        # # 7. Filtering sentences having relevant words with high score
-        # sentences = HighClassificationScoreWordFilter.apply(sentences, self.model, n_masks)
-        # print(f':: {len(sentences)} sentences remaining.')
+        # 9. Filtering sentences having relevant words with high score
+        sentences = HighClassificationScoreWordFilter.apply(sentences, self.model, relevant_tags, n_masks, range_words, 
+                                                            min_classification_score)
+        print(f':: {len(sentences)} sentences remaining.')
 
-        # 9. Replacing the n most relevant words with masks
+        # 10. Replacing the n most relevant words with masks
         sentences = self.replace_with_masks(sentences, n_masks)
         self.sentences = sentences
 
