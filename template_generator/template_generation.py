@@ -39,14 +39,35 @@ class TemplateGenerator(ABC):
     @sentences.setter
     def sentences(self, value):
         self.__sentences = value
+        
+    @property
+    def original_texts(self):
+        if self.sentences is not None:
+            return [sent.original_text for sent in self.sentences]
+        else:
+            raise Exception('Sentences were not generated. Use generate_templates first.')
+        
+    @property
+    def masked_texts(self):
+        if self.sentences is not None:
+            return [sent.masked_text for sent in self.sentences]
+        else:
+            raise Exception('Sentences were not generated. Use generate_templates first.')
+        
+    @property
+    def template_texts(self):
+        if self.sentences is not None:
+            return [sent.template_text for sent in self.sentences]
+        else:
+            raise Exception('Sentences were not generated. Use generate_templates first.')
 
     def to_dataframe(self):
         if self.sentences is None:
-            return None
+            raise Exception('Sentences were not generated. Use generate_templates first.')
 
         data = [sent.to_array() for sent in self.sentences]
 
-        return pd.DataFrame(data, columns=['original_text', 'masked_text', 'template_text'])
+        return pd.DataFrame(data, columns=['label', 'original_text', 'masked_text', 'template_text'])
 
 
 # Approach 1
@@ -248,8 +269,20 @@ class GenericTemplateGeneratorApp5(TemplateGenerator):
         sentences = HighClassificationScoreWordFilter.apply(sentences, self.model, relevant_tags, n_masks, range_words, 
                                                             min_classification_score)
         print(f':: {len(sentences)} sentences remaining.')
+        
+        # 6. Predicting sentences with oracle models
+        predictions = self.oracle_model.predict_all(sentences)
+        print(f':: Sentence predictions done.')
 
-        # 6. Replacing the n most relevant words with masks
+        # 7. Filtering sentences classified unanimously
+        sentences, predictions = UnanimousClassificationFilter.apply(sentences, predictions)
+        print(f':: {len(sentences)} sentences remaining.')
+        
+        #7.1 Setting prediction to sentence
+        for sent, preds in zip(sentences, predictions):
+            sent.prediction = preds[0]
+
+        # 8. Replacing the n most relevant words with masks
         sentences = self.replace_with_masks(sentences, n_masks)
         self.sentences = sentences
 

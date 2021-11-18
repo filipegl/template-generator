@@ -125,10 +125,11 @@ class Sentence(Instance):
         return self.__original_instance
 
     def to_array(self):
-        return [self.original_text, self.masked_text, self.template_text]
+        return [self.prediction.label, self.original_text, self.masked_text, self.template_text]
 
     def __str__(self):
         return  '\n'. join([
+            f'label: {self.prediction.label if self.prediction is not None else "Not predicted..."}',
             f'original_text: {self.original_text}',
             f'masked_text: {self.masked_text}',
             f'template_text: {self.template_text}',
