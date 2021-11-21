@@ -1,5 +1,5 @@
 import numpy as np
-from .instances import Prediction
+from template_generator.instances import Prediction
 
 class OracleModel:
     def __init__(self, models):

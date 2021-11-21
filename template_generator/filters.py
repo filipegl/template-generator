@@ -1,5 +1,5 @@
 from abc import ABC, abstractclassmethod
-from .utils.utils import make_prediction
+from template_generator.utils.utils import make_prediction
 
 class Filter(ABC):
     @abstractclassmethod
@@ -15,16 +15,14 @@ class UnanimousClassificationFilter(Filter):
     filter all inputs unanimously classified in predictions.
     '''
     @classmethod
-    def __filter_unanimous(cls, predictions):
-        labels = [prediction.label for prediction in predictions]
+    def __filter_unanimous(cls, input):
+        labels = [prediction.label for prediction in input.predictions]
         return all(labels[i] == labels[i + 1] for i in range(len(labels) - 1))
 
     @classmethod
-    def apply(cls, inputs, predictions):
+    def apply(cls, inputs):
         print('Filtering instances classified unanimously...')
-        filtered = list(filter(lambda x: cls.__filter_unanimous(x[1]), zip(inputs, predictions)))
-
-        return [x[0] for x in filtered], [x[1] for x in filtered]
+        return list(filter(lambda x: cls.__filter_unanimous(x), inputs))
 
 
 class HighClassificationScoreFilter(Filter):
@@ -35,16 +33,13 @@ class HighClassificationScoreFilter(Filter):
     filter all the inputs with high score average in predictions.
     '''
     @classmethod
-    def __filter_high_score(cls, predictions, min_score):
-        pred_scores = sum([prediction.proba for prediction in predictions]) / len(predictions)
-        return max(pred_scores) >= min_score
+    def __filter_high_score(cls, input, min_score):
+        return max(input.prediction.proba) >= min_score
 
     @classmethod
-    def apply(cls, inputs, predictions, min_score=0.9):
+    def apply(cls, inputs, min_score=0.9):
         print(f'Filtering instances by classification score greater than {min_score}')
-        filtered = list(filter(lambda x: cls.__filter_high_score(x[1], min_score), zip(inputs, predictions)))
-
-        return [x[0] for x in filtered], [x[1] for x in filtered]
+        return list(filter(lambda x: cls.__filter_high_score(x, min_score), inputs))
 
 
 class HighClassificationScoreWordFilter(Filter):
@@ -56,8 +51,8 @@ class HighClassificationScoreWordFilter(Filter):
     prediction.
     '''
     @classmethod
-    def __filter_high_score_words(cls, input, model, relevant_tags, n_words, range_words, min_score):
-        tokens = input.sorted_tokens[:range_words]
+    def __filter_high_score_words(cls, input, model, relevant_tags, n_words, ranked_words_count, min_score):
+        tokens = input.sorted_tokens[:ranked_words_count]
         
         count = 0
         for token in tokens:
@@ -70,9 +65,9 @@ class HighClassificationScoreWordFilter(Filter):
         return count >= n_words
 
     @classmethod
-    def apply(cls, inputs, model, relevant_tags, n_words=2, range_words=2, min_score=0.95):
+    def apply(cls, inputs, model, relevant_tags, n_words=2, ranked_words_count=2, min_score=0.95):
         print(f'Filtering instances by relevant words classification score greater than {min_score}')
-        return list(filter(lambda x: cls.__filter_high_score_words(x, model, relevant_tags, n_words, range_words, min_score), inputs))
+        return list(filter(lambda x: cls.__filter_high_score_words(x, model, relevant_tags, n_words, ranked_words_count, min_score), inputs))
 
 
 class RelevantWordsFilter(Filter):
@@ -84,8 +79,8 @@ class RelevantWordsFilter(Filter):
     words in input prediction.
     '''
     @classmethod
-    def __filter_by_relevance(cls, input, relevant_tags, n_words=2, range_words=2):
-        tokens = input.sorted_tokens[:range_words]
+    def __filter_by_relevance(cls, input, relevant_tags, n_words=2, ranked_words_count=2):
+        tokens = input.sorted_tokens[:ranked_words_count]
         if len(tokens) == 0:
             return False
 
@@ -93,9 +88,9 @@ class RelevantWordsFilter(Filter):
 
 
     @classmethod
-    def apply(cls, inputs, relevant_tags, n_words=2, range_words=2):
+    def apply(cls, inputs, relevant_tags, n_words=2, ranked_words_count=2):
         print(f'Filtering instances by relevant words...')
-        return list(filter(lambda x: cls.__filter_by_relevance(x, relevant_tags, n_words, range_words), inputs))
+        return list(filter(lambda x: cls.__filter_by_relevance(x, relevant_tags, n_words, ranked_words_count), inputs))
 
 
 class ContainingRankedWordsFilter(Filter):
@@ -107,8 +102,8 @@ class ContainingRankedWordsFilter(Filter):
     '''
     @classmethod
     def __filter_by_containing_ranked_words(cls, sentence, sent_counts):
-        range_words = sent_counts[sentence.original_instance]
-        wr_indexes = [token.index for token in sentence.original_instance.sorted_tokens[:range_words]]
+        ranked_words_count = sent_counts[sentence.original_instance]
+        wr_indexes = [token.index for token in sentence.original_instance.sorted_tokens[:ranked_words_count]]
         most_ranked_index = sentence.sorted_tokens[0].index
 
         return most_ranked_index in wr_indexes

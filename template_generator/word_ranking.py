@@ -1,7 +1,6 @@
 from os import error
 from lime.lime_text import LimeTextExplainer
 from abc import ABC, abstractmethod
-from .instances import Prediction
 
 class WordRank(ABC):
     
@@ -19,17 +18,15 @@ class WordRankR1S(WordRank):
 
         for input in inputs:
             # Perform instance prediction
-            if input.prediction == None:
-                label, proba = model.predict(input.original_text)
-                input.prediction = Prediction(label[0], proba[0])
+            label, proba = model.predict(input.original_text)
+            label = label[0]; proba = proba[0]
+
             tokens_str = input.tokenized
             tokens = input.tokens
-
-            label = input.prediction.label
             for i in range(len(tokens_str)):
                 modified_input = ' '.join(tokens_str[:i] + tokens_str[i+1:])
                 modified_input_proba = model.predict_proba(modified_input)[0]
-                tokens[i].rank_score = modified_input_proba[label] - input.prediction.proba[label]
+                tokens[i].rank_score = modified_input_proba[label] - proba[label]
 
         return inputs
 

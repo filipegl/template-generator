@@ -1,4 +1,6 @@
+import collections
 import nltk
+from numpy.core.fromnumeric import argmax
 
 class Prediction:
 
@@ -39,7 +41,8 @@ class Instance:
         self._tokenized = nltk.tokenize.word_tokenize(text)
         self._tokens = self.__generate_tokens()
         
-        self.prediction = None
+        self.predictions = []
+        # self.prediction = None
 
     @property
     def length(self):
@@ -64,6 +67,22 @@ class Instance:
 
         return self.tokens
 
+    @property
+    def prediction(self):
+        if len(self.predictions) == 0:
+            return None
+        
+        # Mount a Prediction with most prediced label and average proba from predictions
+        lbl_dict = collections.Counter([prediction.label for prediction in self.predictions])
+        label = max(lbl_dict, key=lbl_dict.get)
+        proba = sum([prediction.proba for prediction in self.predictions]) / len(self.predictions)
+        
+        # If a tie occurs, use the greater proba average to define the label
+        if min(lbl_dict, key=lbl_dict.get) == label:
+            label = argmax(proba)
+        
+        return Prediction(label, proba)
+        
     @property
     def is_word_ranked(self):
         for token in self.tokens:

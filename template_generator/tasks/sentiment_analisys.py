@@ -1,4 +1,4 @@
-from ..template_generation import (
+from template_generator.template_generation import (
     GenericTemplateGeneratorApp1, 
     GenericTemplateGeneratorApp2, 
     GenericTemplateGeneratorApp3, 
@@ -6,7 +6,7 @@ from ..template_generation import (
     GenericTemplateGeneratorApp5,
     GenericTemplateGeneratorRandom
     )
-from ..word_ranking import WordRankR1S
+from template_generator.word_ranking import WordRankR1S
 from template_generator.utils.utils import make_prediction
 import re
 
@@ -55,8 +55,8 @@ class PosNegTemplateGeneratorApp1(GenericTemplateGeneratorApp1):
 
         return sentences
 
-    def generate_templates(self, texts_input, n_masks=2, range_words=2):
-        return super().generate_templates(texts_input, self.relevant_tags, n_masks, range_words)
+    def generate_templates(self, texts_input, n_masks=2, ranked_words_count=2):
+        return super().generate_templates(texts_input, self.relevant_tags, n_masks, ranked_words_count)
 
 
 class PosNegTemplateGeneratorApp2(GenericTemplateGeneratorApp2):
@@ -104,8 +104,8 @@ class PosNegTemplateGeneratorApp2(GenericTemplateGeneratorApp2):
         return sentences
 
 
-    def generate_templates(self, texts_input, n_masks=2, range_words=2, min_classification_score=0.9):
-        return super().generate_templates(texts_input, self.relevant_tags, n_masks, range_words, min_classification_score)
+    def generate_templates(self, texts_input, n_masks=2, ranked_words_count=2):
+        return super().generate_templates(texts_input, self.relevant_tags, n_masks, ranked_words_count)
 
 
 class PosNegTemplateGeneratorApp3(GenericTemplateGeneratorApp3):
@@ -153,8 +153,8 @@ class PosNegTemplateGeneratorApp3(GenericTemplateGeneratorApp3):
         return sentences
 
 
-    def generate_templates(self, texts_input, n_masks=2, range_words=2, min_classification_score=0.9):
-        return super().generate_templates(texts_input, self.relevant_tags, n_masks, range_words, min_classification_score)
+    def generate_templates(self, texts_input, n_masks=2, ranked_words_count=2, min_classification_score=0.9):
+        return super().generate_templates(texts_input, self.relevant_tags, n_masks, ranked_words_count, min_classification_score)
 
 
 class PosNegTemplateGeneratorApp4(GenericTemplateGeneratorApp4):
@@ -202,8 +202,8 @@ class PosNegTemplateGeneratorApp4(GenericTemplateGeneratorApp4):
         return sentences
 
 
-    def generate_templates(self, texts_input, n_masks=2, range_words=2, min_classification_score=0.9):
-        return super().generate_templates(texts_input, self.relevant_tags, n_masks, range_words, min_classification_score)
+    def generate_templates(self, texts_input, n_masks=2, ranked_words_count=2, min_classification_score=0.9):
+        return super().generate_templates(texts_input, self.relevant_tags, n_masks, ranked_words_count, min_classification_score)
 
 
 class PosNegTemplateGeneratorApp5(GenericTemplateGeneratorApp5):
@@ -251,8 +251,8 @@ class PosNegTemplateGeneratorApp5(GenericTemplateGeneratorApp5):
         return sentences
 
 
-    def generate_templates(self, texts_input, n_masks=2, range_words=2, min_classification_score=0.9):
-        return super().generate_templates(texts_input, self.relevant_tags, n_masks, range_words, min_classification_score)
+    def generate_templates(self, texts_input, n_masks=2, ranked_words_count=2, min_classification_score=0.9):
+        return super().generate_templates(texts_input, self.relevant_tags, n_masks, ranked_words_count, min_classification_score)
 
 
 class PosNegTemplateGeneratorRandom(GenericTemplateGeneratorRandom):

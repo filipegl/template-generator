@@ -1,6 +1,6 @@
-from .instances import Instance
-from .filters import *
-from .oracle_model import OracleModel
+from template_generator.instances import Instance
+from template_generator.filters import *
+from template_generator.oracle_model import OracleModel
 
 from abc import ABC, abstractmethod
 import pandas as pd
@@ -18,7 +18,7 @@ class TemplateGenerator(ABC):
         pass
 
     @abstractmethod
-    def generate_templates(self, texts_input, relevant_tags=[], n_masks = 2, range_words=2, min_classification_score=0.9):
+    def generate_templates(self, texts_input, relevant_tags=[], n_masks = 2, ranked_words_count=2, min_classification_score=0.9):
         pass
 
     @property
@@ -74,7 +74,7 @@ class TemplateGenerator(ABC):
 # Approach 1
 class GenericTemplateGeneratorApp1(TemplateGenerator):
 
-    def generate_templates(self, texts_input, relevant_tags, n_masks=2, range_words=2):
+    def generate_templates(self, texts_input, relevant_tags, n_masks=2, ranked_words_count=2):
         if isinstance(texts_input, str):
             texts_input = [texts_input]
         
@@ -94,11 +94,16 @@ class GenericTemplateGeneratorApp1(TemplateGenerator):
         sentences = ContainingRankedWordsFilter.apply(sentences)
         print(f':: {len(sentences)} sentences remaining.')
 
-        # 4. Filtering sentences having only nouns, adjectives or verbs with higher ranked words
-        sentences = RelevantWordsFilter.apply(sentences, relevant_tags, range_words)
+        # 4. Filtering sentences having only adjectives or verbs with higher ranked words
+        sentences = RelevantWordsFilter.apply(sentences, relevant_tags, ranked_words_count)
         print(f':: {len(sentences)} sentences remaining.')
 
-        # 5. Replacing the n most relevant words with masks
+        # 5. Predicting sentences with oracle models
+        for sent, preds in zip(sentences, self.oracle_model.predict_all(sentences)):
+            sent.predictions = preds
+        print(f':: Sentence predictions done.')
+
+        # 7. Replacing the n most relevant words with masks
         sentences = self.replace_with_masks(sentences, n_masks)
         self.sentences = sentences
 
@@ -108,7 +113,7 @@ class GenericTemplateGeneratorApp1(TemplateGenerator):
 # Approach 2
 class GenericTemplateGeneratorApp2(TemplateGenerator):
 
-    def generate_templates(self, texts_input, relevant_tags, n_masks=2, range_words=2):
+    def generate_templates(self, texts_input, relevant_tags, n_masks=2, ranked_words_count=2):
         if isinstance(texts_input, str):
             texts_input = [texts_input]
 
@@ -132,11 +137,16 @@ class GenericTemplateGeneratorApp2(TemplateGenerator):
         sentences = self.word_ranker.rank(sentences, self.model)
         print(f':: Word ranking done.')
 
-        # 5. Filtering sentences having only nouns, adjectives or verbs with higher ranked words
-        sentences = RelevantWordsFilter.apply(sentences, relevant_tags, n_masks, range_words)
+        # 5. Filtering sentences having only adjectives or verbs with higher ranked words
+        sentences = RelevantWordsFilter.apply(sentences, relevant_tags, n_masks, ranked_words_count)
         print(f':: {len(sentences)} sentences remaining.')
 
-        # 6. Replacing the n most relevant words with masks
+        # 6. Predicting sentences with oracle models
+        for sent, preds in zip(sentences, self.oracle_model.predict_all(sentences)):
+            sent.predictions = preds
+        print(f':: Sentence predictions done.')
+
+        # 7. Replacing the n most relevant words with masks
         sentences = self.replace_with_masks(sentences, n_masks)
         self.sentences = sentences
 
@@ -146,7 +156,7 @@ class GenericTemplateGeneratorApp2(TemplateGenerator):
 # Approach 3
 class GenericTemplateGeneratorApp3(TemplateGenerator):
 
-    def generate_templates(self, texts_input, relevant_tags, n_masks=2, range_words=2, min_classification_score=0.9):
+    def generate_templates(self, texts_input, relevant_tags, n_masks=2, ranked_words_count=2, min_classification_score=0.9):
         instances = [Instance(text) for text in texts_input]
 
         # 1. Break instances into sentences
@@ -157,15 +167,16 @@ class GenericTemplateGeneratorApp3(TemplateGenerator):
         print(f':: {len(sentences)} sentences were generated.')
 
         # 2. Predicting sentences with oracle models
-        predictions = self.oracle_model.predict_all(sentences)
+        for sent, preds in zip(sentences, self.oracle_model.predict_all(sentences)):
+            sent.predictions = preds
         print(f':: Sentence predictions done.')
-
+        
         # 3. Filtering sentences classified unanimously
-        sentences, predictions = UnanimousClassificationFilter.apply(sentences, predictions)
+        sentences = UnanimousClassificationFilter.apply(sentences)
         print(f':: {len(sentences)} sentences remaining.')
 
         # 4. Filtering sentences with high average score in classification step
-        sentences, predictions = HighClassificationScoreFilter.apply(sentences, predictions, min_classification_score)
+        sentences = HighClassificationScoreFilter.apply(sentences, min_classification_score)
         print(f':: {len(sentences)} sentences remaining.')
 
         # 5. Ranking words by its importance when predicted by target model
@@ -173,15 +184,15 @@ class GenericTemplateGeneratorApp3(TemplateGenerator):
         print(f':: Word ranking done.')
 
         # 6. Filtering sentences having only relevant words as higher ranked words
-        sentences = RelevantWordsFilter.apply(sentences, relevant_tags, n_masks, range_words)
+        sentences = RelevantWordsFilter.apply(sentences, relevant_tags, n_masks, ranked_words_count)
         print(f':: {len(sentences)} sentences remaining.')
 
-        # 5. Filtering sentences having relevant words with high score
-        sentences = HighClassificationScoreWordFilter.apply(sentences, self.model, relevant_tags, n_masks, range_words, 
+        # 7. Filtering sentences having relevant words with high score
+        sentences = HighClassificationScoreWordFilter.apply(sentences, self.model, relevant_tags, n_masks, ranked_words_count, 
                                                             min_classification_score)
         print(f':: {len(sentences)} sentences remaining.')
 
-        # 7. Replacing the n most relevant words with masks
+        # 8. Replacing the n most relevant words with masks
         sentences = self.replace_with_masks(sentences, n_masks)
         self.sentences = sentences
 
@@ -191,15 +202,16 @@ class GenericTemplateGeneratorApp3(TemplateGenerator):
 # Approach 4
 class GenericTemplateGeneratorApp4(TemplateGenerator):
 
-    def generate_templates(self, texts_input, relevant_tags, n_masks=2, range_words=2, min_classification_score=0.9):
+    def generate_templates(self, texts_input, relevant_tags, n_masks=2, ranked_words_count=2, min_classification_score=0.9):
         instances = [Instance(text) for text in texts_input]
 
-        # 1. Predict entire instance
-        predictions = self.oracle_model.predict_all(instances)
+        # 1. Predicting instances with oracle models
+        for instance, preds in zip(instances, self.oracle_model.predict_all(instances)):
+            instance.predictions = preds
         print(f':: Instance predictions done.')
 
         # 2. Filter instances unanimously
-        instances, predictions = UnanimousClassificationFilter.apply(instances, predictions)
+        instances = UnanimousClassificationFilter.apply(instances)
         print(f':: {len(instances)} instances remaining.')
 
         # 3. Break instances into sentences
@@ -210,15 +222,16 @@ class GenericTemplateGeneratorApp4(TemplateGenerator):
         print(f':: {len(sentences)} sentences were generated.')
 
         # 4. Predicting sentences with oracle models
-        predictions = self.oracle_model.predict_all(sentences)
+        for sent, preds in zip(sentences, self.oracle_model.predict_all(sentences)):
+            sent.predictions = preds
         print(f':: Sentence predictions done.')
 
         # 5. Filtering sentences classified unanimously
-        sentences, predictions = UnanimousClassificationFilter.apply(sentences, predictions)
+        sentences = UnanimousClassificationFilter.apply(sentences)
         print(f':: {len(sentences)} sentences remaining.')
 
         # 6. Filtering sentences with high average score in classification step
-        sentences, predictions = HighClassificationScoreFilter.apply(sentences, predictions, min_classification_score)
+        sentences = HighClassificationScoreFilter.apply(sentences, min_classification_score)
         print(f':: {len(sentences)} sentences remaining.')
 
         # 7. Ranking words by its importance when predicted by target model
@@ -226,11 +239,11 @@ class GenericTemplateGeneratorApp4(TemplateGenerator):
         print(f':: Word ranking done.')
 
         # 8. Filtering sentences having only relevant words as higher ranked words
-        sentences = RelevantWordsFilter.apply(sentences, relevant_tags, n_masks, range_words)
+        sentences = RelevantWordsFilter.apply(sentences, relevant_tags, n_masks, ranked_words_count)
         print(f':: {len(sentences)} sentences remaining.')
 
         # 9. Filtering sentences having relevant words with high score
-        sentences = HighClassificationScoreWordFilter.apply(sentences, self.model, relevant_tags, n_masks, range_words, 
+        sentences = HighClassificationScoreWordFilter.apply(sentences, self.model, relevant_tags, n_masks, ranked_words_count, 
                                                             min_classification_score)
         print(f':: {len(sentences)} sentences remaining.')
 
@@ -244,7 +257,7 @@ class GenericTemplateGeneratorApp4(TemplateGenerator):
 # Approach 5
 class GenericTemplateGeneratorApp5(TemplateGenerator):
 
-    def generate_templates(self, texts_input, relevant_tags, n_masks = 2, range_words=2, min_classification_score=0.9):
+    def generate_templates(self, texts_input, relevant_tags, n_masks = 2, ranked_words_count=2, min_classification_score=0.9):
         instances = [Instance(text) for text in texts_input]
 
         # 1. Break instances into sentences
@@ -263,27 +276,20 @@ class GenericTemplateGeneratorApp5(TemplateGenerator):
         print(f':: {len(sentences)} sentences remaining.')
 
         # 4. Filtering sentences having only relevant words as higher ranked words
-        sentences = RelevantWordsFilter.apply(sentences, relevant_tags, n_masks, range_words)
+        sentences = RelevantWordsFilter.apply(sentences, relevant_tags, n_masks, ranked_words_count)
         print(f':: {len(sentences)} sentences remaining.')
 
         # 5. Filtering sentences having relevant words with high score
-        sentences = HighClassificationScoreWordFilter.apply(sentences, self.model, relevant_tags, n_masks, range_words, 
+        sentences = HighClassificationScoreWordFilter.apply(sentences, self.model, relevant_tags, n_masks, ranked_words_count, 
                                                             min_classification_score)
         print(f':: {len(sentences)} sentences remaining.')
         
         # 6. Predicting sentences with oracle models
-        predictions = self.oracle_model.predict_all(sentences)
+        for sent, preds in zip(sentences, self.oracle_model.predict_all(sentences)):
+            sent.predictions = preds
         print(f':: Sentence predictions done.')
 
-        # 7. Filtering sentences classified unanimously
-        sentences, predictions = UnanimousClassificationFilter.apply(sentences, predictions)
-        print(f':: {len(sentences)} sentences remaining.')
-        
-        #7.1 Setting prediction to sentence
-        for sent, preds in zip(sentences, predictions):
-            sent.prediction = preds[0]
-
-        # 8. Replacing the n most relevant words with masks
+        # 7. Replacing the n most relevant words with masks
         sentences = self.replace_with_masks(sentences, n_masks)
         self.sentences = sentences
 
@@ -311,12 +317,9 @@ class GenericTemplateGeneratorRandom(TemplateGenerator):
         print(f':: Word ranking done.')
 
         # 4. Predicting sentences with oracle models
-        predictions = self.oracle_model.predict_all(sentences)
+        for sent, preds in zip(sentences, self.oracle_model.predict_all(sentences)):
+            sent.predictions = preds
         print(f':: Sentence predictions done.')
-
-        #4.1 Setting prediction to sentence
-        for sent, preds in zip(sentences, predictions):
-            sent.prediction = preds[0]
 
         # 5. Replacing the n most relevant words with masks
         sentences = self.replace_with_masks(sentences, n_masks)
