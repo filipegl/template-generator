@@ -95,7 +95,7 @@ class GenericTemplateGeneratorApp1(TemplateGenerator):
         print(f':: {len(sentences)} sentences remaining.')
 
         # 4. Filtering sentences having only adjectives or verbs with higher ranked words
-        sentences = RelevantWordsFilter.apply(sentences, relevant_tags, ranked_words_count)
+        sentences = RelevantWordsFilter.apply(sentences, relevant_tags, n_masks, ranked_words_count)
         print(f':: {len(sentences)} sentences remaining.')
 
         # 5. Predicting sentences with oracle models
