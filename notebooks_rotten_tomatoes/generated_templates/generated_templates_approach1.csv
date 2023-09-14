@@ -1,0 +1,2 @@
+template_index,label,original_text,masked_text,template_text
+1,1,and that should tell you everything you need to know about all the queen's men .,and that should {mask} you everything you {mask} to know about all the queen 's men .,and that should {neg_verb} you everything you {neg_verb} to know about all the queen 's men .
