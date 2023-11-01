@@ -1,5 +1,6 @@
 import collections
-import nltk
+import spacy
+
 from numpy.core.fromnumeric import argmax
 
 class Prediction:
@@ -40,9 +41,14 @@ class Token:
 
 class Instance:
     def __init__(self, text):
-        self.__original_text = text     
-        self._tokenized = nltk.tokenize.word_tokenize(text)
-        self._tokens = self.__generate_tokens()
+        self.__original_text = text
+        self.nlp = spacy.load("en_core_web_trf")
+        self._tokenized:list[str] = []
+        self._tokens: list[Token] = []
+
+        for token in self.nlp(text=text):
+            self._tokenized.append(token.text)
+            self._tokens.append(Token(word=token.text, index=token.i, tag=token.pos_))
         
         self.predictions = []
         # self.prediction = None
@@ -97,28 +103,21 @@ class Instance:
     def is_predicted(self):
         return self.prediction != None
 
-    def __generate_tokens(self):
-        tokens_str = self.tokenized
-        tags = nltk.pos_tag(tokens_str, tagset='universal')
-
-        return [Token(tok, i, tag[1]) for tok, i, tag in zip(tokens_str, range(len(tokens_str)), tags)]
-
     def split_to_sentences(self):
 
         ''' Generate sentences based on original text
         '''
-        sentences_str = nltk.tokenize.sent_tokenize(self.original_text)
         sentences = []
-        tokens = self.tokens
         
         start = 0; end = 0
-        for sent in sentences_str:
-            chars = len(''.join(nltk.tokenize.word_tokenize(sent)))
+        for sent in self.nlp(text=self.original_text).sents:
+            sent = str(sent)
+            chars = len(''.join([token.text for token in self.nlp(text=sent)]))
             while chars > 0:
-                chars -= len(tokens[end].word)
+                chars -= len(self.tokens[end].word)
                 end += 1
 
-            sentences.append(Sentence(sent, self.tokens[start: end], self.tokenized[start: end], self))
+            sentences.append(Sentence(text=sent, tokens=self.tokens[start: end], tokenized=self.tokenized[start: end], original_instance=self))
             start = end
 
         return sentences
