@@ -9,10 +9,12 @@ import random
 
 class TemplateGenerator(ABC):
 
-    def __init__(self, word_ranker, model, oracle_models):
+    def __init__(self, word_ranker, model, oracle_models, nlp_model):
         self.__word_ranker = word_ranker
         self.__model = model
         self.__oracle_model = OracleModel(oracle_models)
+        self.__nlp_model = nlp_model
+        
 
     @abstractmethod
     def replace_with_masks(self, sentences, n_words=2):
@@ -33,6 +35,10 @@ class TemplateGenerator(ABC):
     @property
     def word_ranker(self):
         return self.__word_ranker
+    
+    @property
+    def nlp_model(self):
+        return self.__nlp_model
     
     @property
     def sentences(self):
@@ -78,8 +84,7 @@ class GenericTemplateGeneratorApp1(TemplateGenerator):
     def generate_templates(self, texts_input, relevant_tags, n_masks=2, ranked_words_count=2):
         if isinstance(texts_input, str):
             texts_input = [texts_input]
-        nlp = spacy.load("en_core_web_trf")
-        instances = [Instance(text, nlp_model=nlp) for text in texts_input]
+        instances = [Instance(text, nlp_model=self.nlp_model) for text in texts_input]
 
         # 1. Ranking words from entire instance by its importance when predicted by target model
         instances = self.word_ranker.rank(instances, self.model)
@@ -117,8 +122,7 @@ class GenericTemplateGeneratorApp2(TemplateGenerator):
     def generate_templates(self, texts_input, relevant_tags, n_masks=2, ranked_words_count=2):
         if isinstance(texts_input, str):
             texts_input = [texts_input]
-
-        instances = [Instance(text) for text in texts_input]
+        instances = [Instance(text, nlp_model=self.nlp_model) for text in texts_input]
 
         # 1. Ranking words from entire instance by its importance when predicted by target model
         instances = self.word_ranker.rank(instances, self.model)
@@ -158,7 +162,7 @@ class GenericTemplateGeneratorApp2(TemplateGenerator):
 class GenericTemplateGeneratorApp3(TemplateGenerator):
 
     def generate_templates(self, texts_input, relevant_tags, n_masks=2, ranked_words_count=2, min_classification_score=0.9):
-        instances = [Instance(text) for text in texts_input]
+        instances = [Instance(text, nlp_model=self.nlp_model) for text in texts_input]
 
         # 1. Break instances into sentences
         print('Converting texts to sentences...')
@@ -204,7 +208,7 @@ class GenericTemplateGeneratorApp3(TemplateGenerator):
 class GenericTemplateGeneratorApp4(TemplateGenerator):
 
     def generate_templates(self, texts_input, relevant_tags, n_masks=2, ranked_words_count=2, min_classification_score=0.9):
-        instances = [Instance(text) for text in texts_input]
+        instances = [Instance(text, nlp_model=self.nlp_model) for text in texts_input]
 
         # 1. Predicting instances with oracle models
         for instance, preds in zip(instances, self.oracle_model.predict_all(instances)):
@@ -259,7 +263,7 @@ class GenericTemplateGeneratorApp4(TemplateGenerator):
 class GenericTemplateGeneratorApp5(TemplateGenerator):
 
     def generate_templates(self, texts_input, relevant_tags, n_masks = 2, ranked_words_count=2, min_classification_score=0.9):
-        instances = [Instance(text) for text in texts_input]
+        instances = [Instance(text, nlp_model=self.nlp_model) for text in texts_input]
 
         # 1. Break instances into sentences
         print('Converting texts to sentences...')
@@ -301,7 +305,7 @@ class GenericTemplateGeneratorApp5(TemplateGenerator):
 class GenericTemplateGeneratorRandom(TemplateGenerator):
     
     def generate_templates(self, texts_input, n_masks=2, k_templates=10):
-        instances = [Instance(text) for text in texts_input]
+        instances = [Instance(text, nlp_model=self.nlp_model) for text in texts_input]
 
         # 1. Break instances into sentences
         print('Converting texts to sentences...')
