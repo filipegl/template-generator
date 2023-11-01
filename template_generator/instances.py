@@ -1,5 +1,4 @@
 import collections
-import spacy
 
 from numpy.core.fromnumeric import argmax
 
@@ -40,9 +39,9 @@ class Token:
 
 
 class Instance:
-    def __init__(self, text):
+    def __init__(self, text, nlp_model):
         self.__original_text = text
-        self.nlp = spacy.load("en_core_web_trf")
+        self.nlp = nlp_model
         self._tokenized:list[str] = []
         self._tokens: list[Token] = []
 
@@ -117,7 +116,7 @@ class Instance:
                 chars -= len(self.tokens[end].word)
                 end += 1
 
-            sentences.append(Sentence(text=sent, tokens=self.tokens[start: end], tokenized=self.tokenized[start: end], original_instance=self))
+            sentences.append(Sentence(text=sent, nlp_model = self.nlp, tokens=self.tokens[start: end], tokenized=self.tokenized[start: end], original_instance=self))
             start = end
 
         return sentences
@@ -129,8 +128,8 @@ class Instance:
 
 
 class Sentence(Instance):
-    def __init__(self, text, tokens=None, tokenized=None, original_instance=None):
-        super().__init__(text)
+    def __init__(self, text, nlp_model, tokens=None, tokenized=None, original_instance=None):
+        super().__init__(text, nlp_model)
 
         self.masked_text = None
         self.template_text = None

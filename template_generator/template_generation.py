@@ -1,6 +1,7 @@
 from template_generator.instances import Instance
 from template_generator.filters import *
 from template_generator.oracle_model import OracleModel
+import spacy
 
 from abc import ABC, abstractmethod
 import pandas as pd
@@ -77,8 +78,8 @@ class GenericTemplateGeneratorApp1(TemplateGenerator):
     def generate_templates(self, texts_input, relevant_tags, n_masks=2, ranked_words_count=2):
         if isinstance(texts_input, str):
             texts_input = [texts_input]
-        
-        instances = [Instance(text) for text in texts_input]
+        nlp = spacy.load("en_core_web_trf")
+        instances = [Instance(text, nlp_model=nlp) for text in texts_input]
 
         # 1. Ranking words from entire instance by its importance when predicted by target model
         instances = self.word_ranker.rank(instances, self.model)
