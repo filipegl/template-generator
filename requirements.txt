@@ -38,6 +38,7 @@ decorator==5.1.1
 defusedxml==0.7.1
 dill==0.3.7
 en-core-web-trf @ https://github.com/explosion/spacy-models/releases/download/en_core_web_trf-3.7.2/en_core_web_trf-3.7.2-py3-none-any.whl#sha256=dd56d80640411c2e81c3b0cfcb6068156a459c259ae11a4ea51c625c751e3e0a
+et-xmlfile==1.1.0
 executing==2.0.1
 fastjsonschema==2.18.1
 feedparser==6.0.10
@@ -116,6 +117,7 @@ nvidia-cusparse-cu12==12.1.0.106
 nvidia-nccl-cu12==2.18.1
 nvidia-nvjitlink-cu12==12.3.52
 nvidia-nvtx-cu12==12.1.105
+openpyxl==3.1.2
 overrides==7.4.0
 packaging==23.2
 pandas==2.1.2
@@ -127,6 +129,7 @@ pdfminer.six==20221105
 pexpect==4.8.0
 Pillow==10.0.1
 platformdirs==3.11.0
+plotly==5.18.0
 portend==3.2.0
 preshed==3.0.9
 prometheus-client==0.18.0
@@ -176,6 +179,7 @@ srsly==2.4.8
 stack-data==0.6.3
 sympy==1.12
 tempora==5.5.0
+tenacity==8.2.3
 terminado==0.17.1
 thinc==8.2.1
 threadpoolctl==3.2.0
