@@ -1,3 +1,8 @@
+*_spacy/eval_templates.ipynb
+*_spacy/unanimous_analisys.ipynb
+*_spacy/summary_eval.ipynb
+*_spacy/data/*
+
 # VScode settings
 .vscode
 
