@@ -1,3 +1,1 @@
-template_index,label,original_text,masked_text,template_text
-1,0,"well before the end , the film grows as dull as its characters , about whose fate it is hard to care .","well before the end , the film {mask} as {mask} as its characters , about whose fate it is hard to care .","well before the end , the film {neg_verb} as {neg_adj} as its characters , about whose fate it is hard to care ."
-2,0,taylor tries to shift the tone to a thriller's rush .,taylor {mask} to {mask} the tone to a thriller 's rush .,taylor {neg_verb} to {neg_verb} the tone to a thriller 's rush .
+,template_index,label,original_text,masked_text,template_text

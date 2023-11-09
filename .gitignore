@@ -3,6 +3,11 @@
 *_spacy/summary_eval.ipynb
 *_spacy/data/*
 
+*_gen_tokens/eval_templates.ipynb
+*_gen_tokens/unanimous_analisys.ipynb
+*_gen_tokens/summary_eval.ipynb
+*_gen_tokens/data/*
+
 # VScode settings
 .vscode
 
