@@ -1,0 +1,51 @@
+{
+    "neg_verb": [
+        "avoids",
+        "withered",
+        "undermines",
+        "dismissed",
+        "simpering",
+        "squanders",
+        "removed"
+    ],
+    "pos_verb": [
+        "evoked",
+        "celebrating",
+        "carries",
+        "loved",
+        "shares",
+        "enjoy"
+    ],
+    "pos_adj": [
+        "passionate",
+        "successful",
+        "worth",
+        "phenomenal",
+        "notch",
+        "wonderful",
+        "powerful",
+        "tender",
+        "engrossing",
+        "breathtaking",
+        "funny",
+        "brilliant",
+        "terrific",
+        "timeless"
+    ],
+    "neg_adj": [
+        "sensitive",
+        "stupid",
+        "tiresome",
+        "bad",
+        "undeterminable",
+        "off",
+        "preposterous",
+        "nasty",
+        "manipulative",
+        "dumb",
+        "drunk",
+        "cumbersome",
+        "unpretentious",
+        "psychopathic"
+    ]
+}
