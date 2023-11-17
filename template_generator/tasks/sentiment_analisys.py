@@ -8,15 +8,13 @@ from template_generator.template_generation import (
     )
 from template_generator.word_ranking import WordRankR1S
 from template_generator.utils.utils import make_prediction
-import spacy
 import re
 
 
 class PosNegTemplateGeneratorApp1(GenericTemplateGeneratorApp1):
 
     def __init__(self, model, oracle_models):
-        nlp = spacy.load("en_core_web_trf")
-        super().__init__(WordRankR1S, model, oracle_models, nlp_model=nlp)
+        super().__init__(WordRankR1S, model, oracle_models)
         self.__lexicons = {'pos_verb': set(), 'neg_verb': set(), 'pos_adj': set(), 'neg_adj': set()}
 
 
@@ -64,8 +62,7 @@ class PosNegTemplateGeneratorApp1(GenericTemplateGeneratorApp1):
 class PosNegTemplateGeneratorApp2(GenericTemplateGeneratorApp2):
 
     def __init__(self, model, oracle_models):
-        nlp = spacy.load("en_core_web_trf")
-        super().__init__(WordRankR1S, model, oracle_models, nlp_model=nlp)
+        super().__init__(WordRankR1S, model, oracle_models)
         self.__lexicons = {'pos_verb': set(), 'neg_verb': set(), 'pos_adj': set(), 'neg_adj': set()}
 
 
@@ -114,8 +111,7 @@ class PosNegTemplateGeneratorApp2(GenericTemplateGeneratorApp2):
 class PosNegTemplateGeneratorApp3(GenericTemplateGeneratorApp3):
 
     def __init__(self, model, oracle_models):
-        nlp = spacy.load("en_core_web_trf")
-        super().__init__(WordRankR1S, model, oracle_models, nlp_model=nlp)
+        super().__init__(WordRankR1S, model, oracle_models)
         self.__lexicons = {'pos_verb': set(), 'neg_verb': set(), 'pos_adj': set(), 'neg_adj': set()}
 
 
@@ -164,8 +160,7 @@ class PosNegTemplateGeneratorApp3(GenericTemplateGeneratorApp3):
 class PosNegTemplateGeneratorApp4(GenericTemplateGeneratorApp4):
 
     def __init__(self, model, oracle_models):
-        nlp = spacy.load("en_core_web_trf")
-        super().__init__(WordRankR1S, model, oracle_models, nlp_model=nlp)
+        super().__init__(WordRankR1S, model, oracle_models)
         self.__lexicons = {'pos_verb': set(), 'neg_verb': set(), 'pos_adj': set(), 'neg_adj': set()}
 
 
@@ -214,8 +209,7 @@ class PosNegTemplateGeneratorApp4(GenericTemplateGeneratorApp4):
 class PosNegTemplateGeneratorApp5(GenericTemplateGeneratorApp5):
 
     def __init__(self, model, oracle_models):
-        nlp = spacy.load("en_core_web_trf")
-        super().__init__(WordRankR1S, model, oracle_models, nlp_model=nlp)
+        super().__init__(WordRankR1S, model, oracle_models)
         self.__lexicons = {'pos_verb': set(), 'neg_verb': set(), 'pos_adj': set(), 'neg_adj': set()}
 
 
@@ -264,8 +258,7 @@ class PosNegTemplateGeneratorApp5(GenericTemplateGeneratorApp5):
 class PosNegTemplateGeneratorRandom(GenericTemplateGeneratorRandom):
 
     def __init__(self, model, oracle_models):
-        nlp = spacy.load("en_core_web_trf")
-        super().__init__(WordRankR1S, model, oracle_models, nlp_model=nlp)
+        super().__init__(WordRankR1S, model, oracle_models)
         self.__lexicons = {'pos_verb': set(), 'neg_verb': set(), 'pos_adj': set(), 'neg_adj': set()}
 
 
