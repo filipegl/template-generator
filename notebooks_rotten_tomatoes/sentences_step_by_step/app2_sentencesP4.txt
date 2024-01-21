@@ -1,0 +1,116 @@
+ozpetek avoids most of the pitfalls you'd expect in such a potentially sudsy set-up .
+(ozpetek, ADJ, -0.4264127) (avoids, NOUN, -0.8736423) (most, ADJ, -0.3583017) (of, ADP, -0.0533329) (the, DET, 0.0094820) (pitfalls, NOUN, -0.8740080) (you, PRON, -0.0600782) ('d, VERB, 0.0719750) (expect, VERB, -0.7563528) (in, ADP, -0.7327077) (such, ADJ, 0.0697830) (a, DET, -0.0058196) (potentially, ADV, -0.0274347) (sudsy, ADJ, 0.1073709) (set-up, NOUN, 0.0807540) (., ., 0.0000000)
+(pitfalls, NOUN, -0.8740080) (avoids, NOUN, -0.8736423) (expect, VERB, -0.7563528) (in, ADP, -0.7327077) (ozpetek, ADJ, -0.4264127) (most, ADJ, -0.3583017) (sudsy, ADJ, 0.1073709) (set-up, NOUN, 0.0807540) ('d, VERB, 0.0719750) (such, ADJ, 0.0697830) (you, PRON, -0.0600782) (of, ADP, -0.0533329) (potentially, ADV, -0.0274347) (the, DET, 0.0094820) (a, DET, -0.0058196) (., ., 0.0000000)
+
+the lead actors share no chemistry or engaging charisma .
+(the, DET, -0.0000696) (lead, NOUN, -0.0000226) (actors, NOUN, 0.0001678) (share, NOUN, -0.0000045) (no, DET, -0.9078914) (chemistry, NOUN, -0.0000536) (or, CONJ, -0.0039674) (engaging, VERB, 0.0001088) (charisma, NOUN, -0.0003695) (., ., 0.0000000)
+(no, DET, -0.9078914) (or, CONJ, -0.0039674) (charisma, NOUN, -0.0003695) (actors, NOUN, 0.0001678) (engaging, VERB, 0.0001088) (the, DET, -0.0000696) (chemistry, NOUN, -0.0000536) (lead, NOUN, -0.0000226) (share, NOUN, -0.0000045) (., ., 0.0000000)
+
+presents classic moral-condundrum drama : what would you have done to survive ?
+(presents, NOUN, -0.0387808) (classic, ADJ, 0.0011114) (moral-condundrum, ADJ, 0.0244449) (drama, NOUN, -0.4337666) (:, ., 0.0000000) (what, PRON, 0.0149590) (would, VERB, 0.0366169) (you, PRON, -0.0450475) (have, VERB, -0.0115814) (done, VERB, 0.0274206) (to, PRT, -0.2273835) (survive, VERB, -0.8472367) (?, ., 0.0000000)
+(survive, VERB, -0.8472367) (drama, NOUN, -0.4337666) (to, PRT, -0.2273835) (you, PRON, -0.0450475) (presents, NOUN, -0.0387808) (would, VERB, 0.0366169) (done, VERB, 0.0274206) (moral-condundrum, ADJ, 0.0244449) (what, PRON, 0.0149590) (have, VERB, -0.0115814) (classic, ADJ, 0.0011114) (:, ., 0.0000000) (?, ., 0.0000000)
+
+the problem with the film is whether these ambitions , laudable in themselves , justify a theatrical simulation of the death camp of auschwitz ii-birkenau .
+(the, DET, -0.0058327) (problem, NOUN, -0.6189150) (with, ADP, 0.0071629) (the, DET, 0.0065162) (film, NOUN, 0.0060017) (is, VERB, 0.0252365) (whether, ADP, -0.2182988) (these, DET, -0.0147218) (ambitions, NOUN, -0.0764167) (,, ., 0.0000000) (laudable, ADJ, -0.0435390) (in, ADP, -0.0033789) (themselves, PRON, 0.0190915) (,, ., 0.0000000) (justify, VERB, 0.0134950) (a, DET, 0.0011206) (theatrical, ADJ, 0.0123754) (simulation, NOUN, 0.0068749) (of, ADP, 0.0151626) (the, DET, 0.0147121) (death, NOUN, 0.0021188) (camp, NOUN, -0.0025806) (of, ADP, 0.0157719) (auschwitz, ADJ, 0.0190828) (ii-birkenau, NOUN, -0.0066963) (., ., 0.0000000)
+(problem, NOUN, -0.6189150) (whether, ADP, -0.2182988) (ambitions, NOUN, -0.0764167) (laudable, ADJ, -0.0435390) (is, VERB, 0.0252365) (themselves, PRON, 0.0190915) (auschwitz, ADJ, 0.0190828) (of, ADP, 0.0157719) (of, ADP, 0.0151626) (these, DET, -0.0147218) (the, DET, 0.0147121) (justify, VERB, 0.0134950) (theatrical, ADJ, 0.0123754) (with, ADP, 0.0071629) (simulation, NOUN, 0.0068749) (ii-birkenau, NOUN, -0.0066963) (the, DET, 0.0065162) (film, NOUN, 0.0060017) (the, DET, -0.0058327) (in, ADP, -0.0033789) (camp, NOUN, -0.0025806) (death, NOUN, 0.0021188) (a, DET, 0.0011206) (,, ., 0.0000000) (,, ., 0.0000000) (., ., 0.0000000)
+
+and that should tell you everything you need to know about all the queen's men .
+(and, CONJ, -0.0044327) (that, DET, 0.0029496) (should, VERB, 0.0039341) (tell, VERB, -0.0011542) (you, PRON, 0.0034914) (everything, NOUN, -0.0041691) (you, PRON, 0.0009260) (need, VERB, -0.0019741) (to, PRT, -0.0008309) (know, VERB, -0.0023559) (about, ADP, 0.0012792) (all, DET, 0.0010749) (the, DET, 0.0010879) (queen, NOUN, -0.0006020) ('s, PRT, -0.0002000) (men, NOUN, -0.0012654) (., ., 0.0000000)
+(and, CONJ, -0.0044327) (everything, NOUN, -0.0041691) (should, VERB, 0.0039341) (you, PRON, 0.0034914) (that, DET, 0.0029496) (know, VERB, -0.0023559) (need, VERB, -0.0019741) (about, ADP, 0.0012792) (men, NOUN, -0.0012654) (tell, VERB, -0.0011542) (the, DET, 0.0010879) (all, DET, 0.0010749) (you, PRON, 0.0009260) (to, PRT, -0.0008309) (queen, NOUN, -0.0006020) ('s, PRT, -0.0002000) (., ., 0.0000000)
+
+fails in making this character understandable , in getting under her skin , in exploring motivation .
+(fails, NOUN, -0.9984232) (in, ADP, -0.0002935) (making, VERB, -0.0000654) (this, DET, -0.0001515) (character, NOUN, 0.0001660) (understandable, ADJ, 0.0001168) (,, ., 0.0000000) (in, ADP, 0.0000227) (getting, VERB, -0.0000029) (under, ADP, 0.0001521) (her, PRON, 0.0001016) (skin, NOUN, 0.0001235) (,, ., 0.0000000) (in, ADP, 0.0001378) (exploring, VERB, 0.0001224) (motivation, NOUN, 0.0000741) (., ., 0.0000000)
+(fails, NOUN, -0.9984232) (in, ADP, -0.0002935) (character, NOUN, 0.0001660) (under, ADP, 0.0001521) (this, DET, -0.0001515) (in, ADP, 0.0001378) (skin, NOUN, 0.0001235) (exploring, VERB, 0.0001224) (understandable, ADJ, 0.0001168) (her, PRON, 0.0001016) (motivation, NOUN, 0.0000741) (making, VERB, -0.0000654) (in, ADP, 0.0000227) (getting, VERB, -0.0000029) (,, ., 0.0000000) (,, ., 0.0000000) (., ., 0.0000000)
+
+well before the end , the film grows as dull as its characters , about whose fate it is hard to care .
+(well, ADV, -0.0000904) (before, ADP, 0.0000792) (the, DET, 0.0000088) (end, NOUN, 0.0000574) (,, ., 0.0000000) (the, DET, 0.0000839) (film, NOUN, 0.0001633) (grows, VERB, 0.0002123) (as, ADV, -0.0001997) (dull, ADJ, -0.0012259) (as, ADP, 0.0000764) (its, PRON, 0.0000504) (characters, NOUN, -0.0000664) (,, ., 0.0000000) (about, ADP, -0.0000701) (whose, PRON, 0.0000935) (fate, NOUN, -0.0000278) (it, PRON, -0.0000101) (is, VERB, -0.0000154) (hard, ADJ, -0.0000846) (to, PRT, -0.0000790) (care, VERB, -0.0000962) (., ., 0.0000000)
+(dull, ADJ, -0.0012259) (grows, VERB, 0.0002123) (as, ADV, -0.0001997) (film, NOUN, 0.0001633) (care, VERB, -0.0000962) (whose, PRON, 0.0000935) (well, ADV, -0.0000904) (hard, ADJ, -0.0000846) (the, DET, 0.0000839) (before, ADP, 0.0000792) (to, PRT, -0.0000790) (as, ADP, 0.0000764) (about, ADP, -0.0000701) (characters, NOUN, -0.0000664) (end, NOUN, 0.0000574) (its, PRON, 0.0000504) (fate, NOUN, -0.0000278) (is, VERB, -0.0000154) (it, PRON, -0.0000101) (the, DET, 0.0000088) (,, ., 0.0000000) (,, ., 0.0000000) (., ., 0.0000000)
+
+over and over again .
+(over, ADP, 0.0360373) (and, CONJ, 0.0592389) (over, ADV, -0.4565180) (again, ADV, -0.0308501) (., ., 0.0000000)
+(over, ADV, -0.4565180) (and, CONJ, 0.0592389) (over, ADP, 0.0360373) (again, ADV, -0.0308501) (., ., 0.0000000)
+
+too bad none of it is funny .
+(too, ADV, -0.0000528) (bad, ADJ, 0.0001013) (none, NOUN, -0.0013919) (of, ADP, -0.0407569) (it, PRON, -0.0000710) (is, VERB, 0.0000891) (funny, ADJ, -0.0001490) (., ., 0.0000000)
+(of, ADP, -0.0407569) (none, NOUN, -0.0013919) (funny, ADJ, -0.0001490) (bad, ADJ, 0.0001013) (is, VERB, 0.0000891) (it, PRON, -0.0000710) (too, ADV, -0.0000528) (., ., 0.0000000)
+
+a film of delicate interpersonal dances .
+(a, DET, -0.0001991) (film, NOUN, -0.0001338) (of, ADP, -0.0002169) (delicate, ADJ, -0.0016059) (interpersonal, ADJ, -0.0000483) (dances, NOUN, -0.0000020) (., ., 0.0000000)
+(delicate, ADJ, -0.0016059) (of, ADP, -0.0002169) (a, DET, -0.0001991) (film, NOUN, -0.0001338) (interpersonal, ADJ, -0.0000483) (dances, NOUN, -0.0000020) (., ., 0.0000000)
+
+caine makes us watch as his character awakens to the notion that to be human is eventually to have to choose .
+(caine, NOUN, 0.0001432) (makes, VERB, 0.0000393) (us, PRON, -0.0030341) (watch, VERB, 0.0000355) (as, ADP, 0.0001402) (his, PRON, 0.0000369) (character, NOUN, -0.0007881) (awakens, VERB, 0.0000975) (to, PRT, 0.0000705) (the, DET, 0.0000483) (notion, NOUN, -0.0000276) (that, ADP, -0.0000471) (to, PRT, 0.0000301) (be, VERB, 0.0000879) (human, ADJ, 0.0000911) (is, VERB, 0.0000870) (eventually, ADV, -0.0000290) (to, PRT, 0.0000843) (have, VERB, 0.0001753) (to, PRT, 0.0001615) (choose, VERB, 0.0000736) (., ., 0.0000000)
+(us, PRON, -0.0030341) (character, NOUN, -0.0007881) (have, VERB, 0.0001753) (to, PRT, 0.0001615) (caine, NOUN, 0.0001432) (as, ADP, 0.0001402) (awakens, VERB, 0.0000975) (human, ADJ, 0.0000911) (be, VERB, 0.0000879) (is, VERB, 0.0000870) (to, PRT, 0.0000843) (choose, VERB, 0.0000736) (to, PRT, 0.0000705) (the, DET, 0.0000483) (that, ADP, -0.0000471) (makes, VERB, 0.0000393) (his, PRON, 0.0000369) (watch, VERB, 0.0000355) (to, PRT, 0.0000301) (eventually, ADV, -0.0000290) (notion, NOUN, -0.0000276) (., ., 0.0000000)
+
+nothing but an episode of smackdown !
+(nothing, NOUN, -0.0033657) (but, CONJ, -0.0004963) (an, DET, 0.0001343) (episode, NOUN, 0.0001387) (of, ADP, 0.0001585) (smackdown, NOUN, 0.0001313) (!, ., 0.0000000)
+(nothing, NOUN, -0.0033657) (but, CONJ, -0.0004963) (of, ADP, 0.0001585) (episode, NOUN, 0.0001387) (an, DET, 0.0001343) (smackdown, NOUN, 0.0001313) (!, ., 0.0000000)
+
+is a question for philosophers , not filmmakers ; all the filmmakers need to do is engage an audience .
+(is, VERB, -0.0114412) (a, DET, -0.0672911) (question, NOUN, 0.0190327) (for, ADP, 0.0145407) (philosophers, NOUN, 0.0277357) (,, ., 0.0000000) (not, ADV, -0.5856677) (filmmakers, NOUN, 0.0251336) (;, ., 0.0000000) (all, DET, 0.0187203) (the, DET, 0.0015918) (filmmakers, NOUN, 0.0050270) (need, VERB, 0.0293580) (to, PRT, 0.0249132) (do, VERB, -0.1661817) (is, VERB, -0.3891540) (engage, VERB, 0.0243783) (an, DET, -0.0085699) (audience, NOUN, 0.0115810) (., ., 0.0000000)
+(not, ADV, -0.5856677) (is, VERB, -0.3891540) (do, VERB, -0.1661817) (a, DET, -0.0672911) (need, VERB, 0.0293580) (philosophers, NOUN, 0.0277357) (filmmakers, NOUN, 0.0251336) (to, PRT, 0.0249132) (engage, VERB, 0.0243783) (question, NOUN, 0.0190327) (all, DET, 0.0187203) (for, ADP, 0.0145407) (audience, NOUN, 0.0115810) (is, VERB, -0.0114412) (an, DET, -0.0085699) (filmmakers, NOUN, 0.0050270) (the, DET, 0.0015918) (,, ., 0.0000000) (;, ., 0.0000000) (., ., 0.0000000)
+
+" one look at a girl in tight pants and big tits and you turn stupid ? "
+(``, ., -0.0000616) (one, NUM, -0.0001928) (look, NOUN, -0.0003904) (at, ADP, 0.0001084) (a, DET, 0.0001451) (girl, NOUN, 0.0001954) (in, ADP, 0.0001752) (tight, ADJ, 0.0001096) (pants, NOUN, 0.0001410) (and, CONJ, 0.0002072) (big, ADJ, 0.0001088) (tits, NOUN, 0.0000629) (and, CONJ, 0.0000030) (you, PRON, 0.0000037) (turn, VERB, 0.0001698) (stupid, ADJ, -0.4936622) (?, ., 0.0000246) (``, ., -0.0032731)
+(stupid, ADJ, -0.4936622) (``, ., -0.0032731) (look, NOUN, -0.0003904) (and, CONJ, 0.0002072) (girl, NOUN, 0.0001954) (one, NUM, -0.0001928) (in, ADP, 0.0001752) (turn, VERB, 0.0001698) (a, DET, 0.0001451) (pants, NOUN, 0.0001410) (tight, ADJ, 0.0001096) (big, ADJ, 0.0001088) (at, ADP, 0.0001084) (tits, NOUN, 0.0000629) (``, ., -0.0000616) (?, ., 0.0000246) (you, PRON, 0.0000037) (and, CONJ, 0.0000030)
+
+isn't that the basis for the entire plot ?
+(is, VERB, -0.0546446) (n't, ADV, -0.6170404) (that, ADP, -0.0178444) (the, DET, -0.1913011) (basis, NOUN, -0.1195480) (for, ADP, -0.0811453) (the, DET, -0.0533819) (entire, ADJ, -0.3992288) (plot, NOUN, -0.1998394) (?, ., -0.3314492)
+(n't, ADV, -0.6170404) (entire, ADJ, -0.3992288) (?, ., -0.3314492) (plot, NOUN, -0.1998394) (the, DET, -0.1913011) (basis, NOUN, -0.1195480) (for, ADP, -0.0811453) (is, VERB, -0.0546446) (the, DET, -0.0533819) (that, ADP, -0.0178444)
+
+when it's this rich and luscious , who cares ?
+(when, ADV, 0.0838788) (it, PRON, 0.0823587) ('s, VERB, 0.0347438) (this, DET, -0.1590829) (rich, ADJ, -0.8889289) (and, CONJ, -0.5889319) (luscious, ADJ, 0.0671805) (,, ., 0.0000000) (who, PRON, -0.0869855) (cares, VERB, 0.0336864) (?, ., 0.0000000)
+(rich, ADJ, -0.8889289) (and, CONJ, -0.5889319) (this, DET, -0.1590829) (who, PRON, -0.0869855) (when, ADV, 0.0838788) (it, PRON, 0.0823587) (luscious, ADJ, 0.0671805) ('s, VERB, 0.0347438) (cares, VERB, 0.0336864) (,, ., 0.0000000) (?, ., 0.0000000)
+
+and it's harder still to believe that anyone in his right mind would want to see the it .
+(and, CONJ, -0.2780972) (it, PRON, -0.3186631) ('s, VERB, 0.2551506) (harder, ADJ, -0.6767578) (still, ADV, 0.0501939) (to, PRT, 0.3021908) (believe, VERB, -0.2861166) (that, ADP, -0.5866378) (anyone, NOUN, 0.0746641) (in, ADP, 0.1566544) (his, PRON, 0.1180093) (right, NOUN, 0.1394713) (mind, NOUN, -0.0648055) (would, VERB, 0.2335292) (want, VERB, -0.1105912) (to, PRT, 0.0121639) (see, VERB, 0.2153935) (the, DET, 0.0852140) (it, PRON, 0.0895294) (., ., 0.0000000)
+(harder, ADJ, -0.6767578) (that, ADP, -0.5866378) (it, PRON, -0.3186631) (to, PRT, 0.3021908) (believe, VERB, -0.2861166) (and, CONJ, -0.2780972) ('s, VERB, 0.2551506) (would, VERB, 0.2335292) (see, VERB, 0.2153935) (in, ADP, 0.1566544) (right, NOUN, 0.1394713) (his, PRON, 0.1180093) (want, VERB, -0.1105912) (it, PRON, 0.0895294) (the, DET, 0.0852140) (anyone, NOUN, 0.0746641) (mind, NOUN, -0.0648055) (still, ADV, 0.0501939) (to, PRT, 0.0121639) (., ., 0.0000000)
+
+chabrol's subtlest works , but also one of his most uncanny .
+(chabrol, NOUN, -0.0000370) ('s, PRT, 0.0000142) (subtlest, ADJ, -0.0001115) (works, NOUN, -0.0003144) (,, ., 0.0000000) (but, CONJ, 0.0001637) (also, ADV, 0.0000063) (one, NUM, -0.0007411) (of, ADP, -0.0000405) (his, PRON, -0.0001472) (most, ADJ, -0.0001243) (uncanny, ADJ, 0.0002891) (., ., 0.0000000)
+(one, NUM, -0.0007411) (works, NOUN, -0.0003144) (uncanny, ADJ, 0.0002891) (but, CONJ, 0.0001637) (his, PRON, -0.0001472) (most, ADJ, -0.0001243) (subtlest, ADJ, -0.0001115) (of, ADP, -0.0000405) (chabrol, NOUN, -0.0000370) ('s, PRT, 0.0000142) (also, ADV, 0.0000063) (,, ., 0.0000000) (., ., 0.0000000)
+
+scherfig , the writer-director , has made a film so unabashedly hopeful that it actually makes the heart soar .
+(scherfig, NOUN, 0.0001217) (,, ., 0.0000000) (the, DET, 0.0000901) (writer-director, NOUN, 0.0002124) (,, ., 0.0000000) (has, VERB, -0.0000048) (made, VERB, -0.0000061) (a, DET, 0.0001020) (film, NOUN, -0.0003936) (so, ADV, -0.0000682) (unabashedly, ADV, 0.0000558) (hopeful, ADJ, -0.0000876) (that, ADP, 0.0000054) (it, PRON, 0.0000830) (actually, ADV, 0.0002350) (makes, VERB, 0.0000862) (the, DET, 0.0000168) (heart, NOUN, -0.0034753) (soar, VERB, -0.0000364) (., ., 0.0000000)
+(heart, NOUN, -0.0034753) (film, NOUN, -0.0003936) (actually, ADV, 0.0002350) (writer-director, NOUN, 0.0002124) (scherfig, NOUN, 0.0001217) (a, DET, 0.0001020) (the, DET, 0.0000901) (hopeful, ADJ, -0.0000876) (makes, VERB, 0.0000862) (it, PRON, 0.0000830) (so, ADV, -0.0000682) (unabashedly, ADV, 0.0000558) (soar, VERB, -0.0000364) (the, DET, 0.0000168) (made, VERB, -0.0000061) (that, ADP, 0.0000054) (has, VERB, -0.0000048) (,, ., 0.0000000) (,, ., 0.0000000) (., ., 0.0000000)
+
+[lee] treats his audience the same way that jim brown treats his women -- as dumb , credulous , unassuming , subordinate subjects .
+([, NOUN, 0.0003518) (lee, NOUN, 0.0005935) (], NOUN, 0.0000429) (treats, VERB, 0.0008689) (his, PRON, 0.0005184) (audience, NOUN, 0.0004191) (the, DET, 0.0003414) (same, ADJ, -0.0010422) (way, NOUN, -0.0012136) (that, ADP, 0.0004268) (jim, VERB, -0.0001181) (brown, ADJ, 0.0003821) (treats, NOUN, 0.0003710) (his, PRON, -0.0001501) (women, NOUN, -0.0007249) (--, ., 0.0000000) (as, ADP, 0.0001543) (dumb, NOUN, -0.3037273) (,, ., 0.0000000) (credulous, ADJ, -0.0009203) (,, ., 0.0000000) (unassuming, ADJ, -0.0001103) (,, ., 0.0000000) (subordinate, ADJ, 0.0001991) (subjects, NOUN, 0.0000593) (., ., 0.0000000)
+(dumb, NOUN, -0.3037273) (way, NOUN, -0.0012136) (same, ADJ, -0.0010422) (credulous, ADJ, -0.0009203) (treats, VERB, 0.0008689) (women, NOUN, -0.0007249) (lee, NOUN, 0.0005935) (his, PRON, 0.0005184) (that, ADP, 0.0004268) (audience, NOUN, 0.0004191) (brown, ADJ, 0.0003821) (treats, NOUN, 0.0003710) ([, NOUN, 0.0003518) (the, DET, 0.0003414) (subordinate, ADJ, 0.0001991) (as, ADP, 0.0001543) (his, PRON, -0.0001501) (jim, VERB, -0.0001181) (unassuming, ADJ, -0.0001103) (subjects, NOUN, 0.0000593) (], NOUN, 0.0000429) (--, ., 0.0000000) (,, ., 0.0000000) (,, ., 0.0000000) (,, ., 0.0000000) (., ., 0.0000000)
+
+robinson complex founders on its own preciousness -- and squanders its beautiful women .
+(robinson, NOUN, -0.0000102) (complex, ADJ, -0.0000367) (founders, NOUN, 0.0000228) (on, ADP, -0.0000198) (its, PRON, -0.0000772) (own, ADJ, -0.0001134) (preciousness, NOUN, 0.0000641) (--, ., 0.0000000) (and, CONJ, -0.0001692) (squanders, NOUN, -0.9989211) (its, PRON, -0.0001701) (beautiful, ADJ, 0.0000117) (women, NOUN, -0.0000780) (., ., 0.0000000)
+(squanders, NOUN, -0.9989211) (its, PRON, -0.0001701) (and, CONJ, -0.0001692) (own, ADJ, -0.0001134) (women, NOUN, -0.0000780) (its, PRON, -0.0000772) (preciousness, NOUN, 0.0000641) (complex, ADJ, -0.0000367) (founders, NOUN, 0.0000228) (on, ADP, -0.0000198) (beautiful, ADJ, 0.0000117) (robinson, NOUN, -0.0000102) (--, ., 0.0000000) (., ., 0.0000000)
+
+hopefully it'll be at the dollar theatres by the time christmas rolls around .
+(hopefully, ADV, 0.0032144) (it, PRON, 0.0093025) ('ll, VERB, -0.0020877) (be, VERB, -0.0081049) (at, ADP, -0.0090811) (the, DET, 0.0021389) (dollar, NOUN, -0.0043020) (theatres, NOUN, -0.0864165) (by, ADP, -0.1139898) (the, DET, -0.0204590) (time, NOUN, -0.0457781) (christmas, NOUN, 0.0045156) (rolls, NOUN, -0.0003943) (around, ADP, 0.0064772) (., ., 0.0000000)
+(by, ADP, -0.1139898) (theatres, NOUN, -0.0864165) (time, NOUN, -0.0457781) (the, DET, -0.0204590) (it, PRON, 0.0093025) (at, ADP, -0.0090811) (be, VERB, -0.0081049) (around, ADP, 0.0064772) (christmas, NOUN, 0.0045156) (dollar, NOUN, -0.0043020) (hopefully, ADV, 0.0032144) (the, DET, 0.0021389) ('ll, VERB, -0.0020877) (rolls, NOUN, -0.0003943) (., ., 0.0000000)
+
+wait to see it then .
+(wait, NOUN, -0.8797931) (to, PRT, 0.0556355) (see, VERB, -0.0124802) (it, PRON, -0.0927598) (then, ADV, -0.0693744) (., ., 0.0000000)
+(wait, NOUN, -0.8797931) (it, PRON, -0.0927598) (then, ADV, -0.0693744) (to, PRT, 0.0556355) (see, VERB, -0.0124802) (., ., 0.0000000)
+
+remember back when thrillers actually thrilled ?
+(remember, VERB, -0.4304728) (back, PRT, -0.0295382) (when, ADV, 0.0524896) (thrillers, NOUN, -0.1910546) (actually, ADV, 0.0448676) (thrilled, VERB, -0.0068851) (?, ., 0.0000000)
+(remember, VERB, -0.4304728) (thrillers, NOUN, -0.1910546) (when, ADV, 0.0524896) (actually, ADV, 0.0448676) (back, PRT, -0.0295382) (thrilled, VERB, -0.0068851) (?, ., 0.0000000)
+
+when the twist endings were actually surprising ?
+(when, ADV, -0.9802334) (the, DET, -0.0160042) (twist, NOUN, 0.0003188) (endings, NOUN, 0.0019515) (were, VERB, 0.0003349) (actually, ADV, 0.0029289) (surprising, ADJ, -0.0046411) (?, ., 0.0000000)
+(when, ADV, -0.9802334) (the, DET, -0.0160042) (surprising, ADJ, -0.0046411) (actually, ADV, 0.0029289) (endings, NOUN, 0.0019515) (were, VERB, 0.0003349) (twist, NOUN, 0.0003188) (?, ., 0.0000000)
+
+sadly , as blood work proves , that was a long , long time ago .
+(sadly, ADV, -0.1478537) (,, ., 0.0000000) (as, ADP, 0.1337779) (blood, NOUN, 0.0735571) (work, NOUN, -0.2523048) (proves, NOUN, 0.1378885) (,, ., 0.0000000) (that, DET, -0.3958144) (was, VERB, 0.1111509) (a, DET, -0.0519662) (long, ADJ, 0.0298092) (,, ., 0.0000000) (long, ADJ, 0.0298092) (time, NOUN, 0.1003136) (ago, ADV, -0.0074781) (., ., 0.0000000)
+(that, DET, -0.3958144) (work, NOUN, -0.2523048) (sadly, ADV, -0.1478537) (proves, NOUN, 0.1378885) (as, ADP, 0.1337779) (was, VERB, 0.1111509) (time, NOUN, 0.1003136) (blood, NOUN, 0.0735571) (a, DET, -0.0519662) (long, ADJ, 0.0298092) (long, ADJ, 0.0298092) (ago, ADV, -0.0074781) (,, ., 0.0000000) (,, ., 0.0000000) (,, ., 0.0000000) (., ., 0.0000000)
+
+taylor tries to shift the tone to a thriller's rush .
+(taylor, NOUN, 0.0007733) (tries, VERB, -0.0252094) (to, PRT, 0.0003502) (shift, VERB, -0.3056656) (the, DET, -0.0016974) (tone, NOUN, -0.0004310) (to, PRT, -0.0007361) (a, DET, -0.0019788) (thriller, NOUN, -0.0023528) ('s, PRT, -0.0019968) (rush, NOUN, 0.0000905) (., ., 0.0000000)
+(shift, VERB, -0.3056656) (tries, VERB, -0.0252094) (thriller, NOUN, -0.0023528) ('s, PRT, -0.0019968) (a, DET, -0.0019788) (the, DET, -0.0016974) (taylor, NOUN, 0.0007733) (to, PRT, -0.0007361) (tone, NOUN, -0.0004310) (to, PRT, 0.0003502) (rush, NOUN, 0.0000905) (., ., 0.0000000)
+
+and yet , it still works .
+(and, CONJ, 0.0003050) (yet, ADV, 0.0016775) (,, ., 0.0000000) (it, PRON, -0.0027930) (still, ADV, -0.0087988) (works, VERB, -0.1343514) (., ., 0.0000000)
+(works, VERB, -0.1343514) (still, ADV, -0.0087988) (it, PRON, -0.0027930) (yet, ADV, 0.0016775) (and, CONJ, 0.0003050) (,, ., 0.0000000) (., ., 0.0000000)
+
+alas , another breathless movie about same !
+(alas, NOUN, -0.1120074) (,, ., 0.0000000) (another, DET, -0.0001401) (breathless, NOUN, 0.0002786) (movie, NOUN, -0.0015327) (about, ADP, -0.0002435) (same, ADJ, 0.0002732) (!, ., 0.0000000)
+(alas, NOUN, -0.1120074) (movie, NOUN, -0.0015327) (breathless, NOUN, 0.0002786) (same, ADJ, 0.0002732) (about, ADP, -0.0002435) (another, DET, -0.0001401) (,, ., 0.0000000) (!, ., 0.0000000)
+

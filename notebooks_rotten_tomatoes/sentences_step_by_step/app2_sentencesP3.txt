@@ -1,0 +1,87 @@
+ozpetek avoids most of the pitfalls you'd expect in such a potentially sudsy set-up .
+(ozpetek, ADJ)  (avoids, NOUN)  (most, ADJ)  (of, ADP)  (the, DET)  (pitfalls, NOUN)  (you, PRON)  ('d, VERB)  (expect, VERB)  (in, ADP)  (such, ADJ)  (a, DET)  (potentially, ADV)  (sudsy, ADJ)  (set-up, NOUN)  (., .) 
+
+the lead actors share no chemistry or engaging charisma .
+(the, DET)  (lead, NOUN)  (actors, NOUN)  (share, NOUN)  (no, DET)  (chemistry, NOUN)  (or, CONJ)  (engaging, VERB)  (charisma, NOUN)  (., .) 
+
+presents classic moral-condundrum drama : what would you have done to survive ?
+(presents, NOUN)  (classic, ADJ)  (moral-condundrum, ADJ)  (drama, NOUN)  (:, .)  (what, PRON)  (would, VERB)  (you, PRON)  (have, VERB)  (done, VERB)  (to, PRT)  (survive, VERB)  (?, .) 
+
+the problem with the film is whether these ambitions , laudable in themselves , justify a theatrical simulation of the death camp of auschwitz ii-birkenau .
+(the, DET)  (problem, NOUN)  (with, ADP)  (the, DET)  (film, NOUN)  (is, VERB)  (whether, ADP)  (these, DET)  (ambitions, NOUN)  (,, .)  (laudable, ADJ)  (in, ADP)  (themselves, PRON)  (,, .)  (justify, VERB)  (a, DET)  (theatrical, ADJ)  (simulation, NOUN)  (of, ADP)  (the, DET)  (death, NOUN)  (camp, NOUN)  (of, ADP)  (auschwitz, ADJ)  (ii-birkenau, NOUN)  (., .) 
+
+and that should tell you everything you need to know about all the queen's men .
+(and, CONJ)  (that, DET)  (should, VERB)  (tell, VERB)  (you, PRON)  (everything, NOUN)  (you, PRON)  (need, VERB)  (to, PRT)  (know, VERB)  (about, ADP)  (all, DET)  (the, DET)  (queen, NOUN)  ('s, PRT)  (men, NOUN)  (., .) 
+
+fails in making this character understandable , in getting under her skin , in exploring motivation .
+(fails, NOUN)  (in, ADP)  (making, VERB)  (this, DET)  (character, NOUN)  (understandable, ADJ)  (,, .)  (in, ADP)  (getting, VERB)  (under, ADP)  (her, PRON)  (skin, NOUN)  (,, .)  (in, ADP)  (exploring, VERB)  (motivation, NOUN)  (., .) 
+
+well before the end , the film grows as dull as its characters , about whose fate it is hard to care .
+(well, ADV)  (before, ADP)  (the, DET)  (end, NOUN)  (,, .)  (the, DET)  (film, NOUN)  (grows, VERB)  (as, ADV)  (dull, ADJ)  (as, ADP)  (its, PRON)  (characters, NOUN)  (,, .)  (about, ADP)  (whose, PRON)  (fate, NOUN)  (it, PRON)  (is, VERB)  (hard, ADJ)  (to, PRT)  (care, VERB)  (., .) 
+
+over and over again .
+(over, ADP)  (and, CONJ)  (over, ADV)  (again, ADV)  (., .) 
+
+too bad none of it is funny .
+(too, ADV)  (bad, ADJ)  (none, NOUN)  (of, ADP)  (it, PRON)  (is, VERB)  (funny, ADJ)  (., .) 
+
+a film of delicate interpersonal dances .
+(a, DET)  (film, NOUN)  (of, ADP)  (delicate, ADJ)  (interpersonal, ADJ)  (dances, NOUN)  (., .) 
+
+caine makes us watch as his character awakens to the notion that to be human is eventually to have to choose .
+(caine, NOUN)  (makes, VERB)  (us, PRON)  (watch, VERB)  (as, ADP)  (his, PRON)  (character, NOUN)  (awakens, VERB)  (to, PRT)  (the, DET)  (notion, NOUN)  (that, ADP)  (to, PRT)  (be, VERB)  (human, ADJ)  (is, VERB)  (eventually, ADV)  (to, PRT)  (have, VERB)  (to, PRT)  (choose, VERB)  (., .) 
+
+nothing but an episode of smackdown !
+(nothing, NOUN)  (but, CONJ)  (an, DET)  (episode, NOUN)  (of, ADP)  (smackdown, NOUN)  (!, .) 
+
+is a question for philosophers , not filmmakers ; all the filmmakers need to do is engage an audience .
+(is, VERB)  (a, DET)  (question, NOUN)  (for, ADP)  (philosophers, NOUN)  (,, .)  (not, ADV)  (filmmakers, NOUN)  (;, .)  (all, DET)  (the, DET)  (filmmakers, NOUN)  (need, VERB)  (to, PRT)  (do, VERB)  (is, VERB)  (engage, VERB)  (an, DET)  (audience, NOUN)  (., .) 
+
+" one look at a girl in tight pants and big tits and you turn stupid ? "
+(``, .)  (one, NUM)  (look, NOUN)  (at, ADP)  (a, DET)  (girl, NOUN)  (in, ADP)  (tight, ADJ)  (pants, NOUN)  (and, CONJ)  (big, ADJ)  (tits, NOUN)  (and, CONJ)  (you, PRON)  (turn, VERB)  (stupid, ADJ)  (?, .)  (``, .) 
+
+isn't that the basis for the entire plot ?
+(is, VERB)  (n't, ADV)  (that, ADP)  (the, DET)  (basis, NOUN)  (for, ADP)  (the, DET)  (entire, ADJ)  (plot, NOUN)  (?, .) 
+
+when it's this rich and luscious , who cares ?
+(when, ADV)  (it, PRON)  ('s, VERB)  (this, DET)  (rich, ADJ)  (and, CONJ)  (luscious, ADJ)  (,, .)  (who, PRON)  (cares, VERB)  (?, .) 
+
+and it's harder still to believe that anyone in his right mind would want to see the it .
+(and, CONJ)  (it, PRON)  ('s, VERB)  (harder, ADJ)  (still, ADV)  (to, PRT)  (believe, VERB)  (that, ADP)  (anyone, NOUN)  (in, ADP)  (his, PRON)  (right, NOUN)  (mind, NOUN)  (would, VERB)  (want, VERB)  (to, PRT)  (see, VERB)  (the, DET)  (it, PRON)  (., .) 
+
+chabrol's subtlest works , but also one of his most uncanny .
+(chabrol, NOUN)  ('s, PRT)  (subtlest, ADJ)  (works, NOUN)  (,, .)  (but, CONJ)  (also, ADV)  (one, NUM)  (of, ADP)  (his, PRON)  (most, ADJ)  (uncanny, ADJ)  (., .) 
+
+scherfig , the writer-director , has made a film so unabashedly hopeful that it actually makes the heart soar .
+(scherfig, NOUN)  (,, .)  (the, DET)  (writer-director, NOUN)  (,, .)  (has, VERB)  (made, VERB)  (a, DET)  (film, NOUN)  (so, ADV)  (unabashedly, ADV)  (hopeful, ADJ)  (that, ADP)  (it, PRON)  (actually, ADV)  (makes, VERB)  (the, DET)  (heart, NOUN)  (soar, VERB)  (., .) 
+
+[lee] treats his audience the same way that jim brown treats his women -- as dumb , credulous , unassuming , subordinate subjects .
+([, NOUN)  (lee, NOUN)  (], NOUN)  (treats, VERB)  (his, PRON)  (audience, NOUN)  (the, DET)  (same, ADJ)  (way, NOUN)  (that, ADP)  (jim, VERB)  (brown, ADJ)  (treats, NOUN)  (his, PRON)  (women, NOUN)  (--, .)  (as, ADP)  (dumb, NOUN)  (,, .)  (credulous, ADJ)  (,, .)  (unassuming, ADJ)  (,, .)  (subordinate, ADJ)  (subjects, NOUN)  (., .) 
+
+robinson complex founders on its own preciousness -- and squanders its beautiful women .
+(robinson, NOUN)  (complex, ADJ)  (founders, NOUN)  (on, ADP)  (its, PRON)  (own, ADJ)  (preciousness, NOUN)  (--, .)  (and, CONJ)  (squanders, NOUN)  (its, PRON)  (beautiful, ADJ)  (women, NOUN)  (., .) 
+
+hopefully it'll be at the dollar theatres by the time christmas rolls around .
+(hopefully, ADV)  (it, PRON)  ('ll, VERB)  (be, VERB)  (at, ADP)  (the, DET)  (dollar, NOUN)  (theatres, NOUN)  (by, ADP)  (the, DET)  (time, NOUN)  (christmas, NOUN)  (rolls, NOUN)  (around, ADP)  (., .) 
+
+wait to see it then .
+(wait, NOUN)  (to, PRT)  (see, VERB)  (it, PRON)  (then, ADV)  (., .) 
+
+remember back when thrillers actually thrilled ?
+(remember, VERB)  (back, PRT)  (when, ADV)  (thrillers, NOUN)  (actually, ADV)  (thrilled, VERB)  (?, .) 
+
+when the twist endings were actually surprising ?
+(when, ADV)  (the, DET)  (twist, NOUN)  (endings, NOUN)  (were, VERB)  (actually, ADV)  (surprising, ADJ)  (?, .) 
+
+sadly , as blood work proves , that was a long , long time ago .
+(sadly, ADV)  (,, .)  (as, ADP)  (blood, NOUN)  (work, NOUN)  (proves, NOUN)  (,, .)  (that, DET)  (was, VERB)  (a, DET)  (long, ADJ)  (,, .)  (long, ADJ)  (time, NOUN)  (ago, ADV)  (., .) 
+
+taylor tries to shift the tone to a thriller's rush .
+(taylor, NOUN)  (tries, VERB)  (to, PRT)  (shift, VERB)  (the, DET)  (tone, NOUN)  (to, PRT)  (a, DET)  (thriller, NOUN)  ('s, PRT)  (rush, NOUN)  (., .) 
+
+and yet , it still works .
+(and, CONJ)  (yet, ADV)  (,, .)  (it, PRON)  (still, ADV)  (works, VERB)  (., .) 
+
+alas , another breathless movie about same !
+(alas, NOUN)  (,, .)  (another, DET)  (breathless, NOUN)  (movie, NOUN)  (about, ADP)  (same, ADJ)  (!, .) 
+
